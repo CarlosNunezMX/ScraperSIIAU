@@ -14,7 +14,6 @@ import PageLogin from "./pages/pageLogin";
 import PageConfirmData from './pages/pageConfirmData';
 import PageSchedule from "./pages/pageSchedule"
 import PageScheduleData from "./pages/pageScheduleData";
-import { Alert } from 'react-native';
 
 //Constantes
 const Stack = createStackNavigator();
@@ -51,6 +50,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName={mainPage} screenOptions={{ cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS }}>
+        
         <Stack.Screen name="Login" component={PageLogin} options={{headerShown: false}} />
         <Stack.Screen name="ConfirmData" component={PageConfirmData} options={{headerShown: false}} />
         <Stack.Screen name="Schedule" component={PageSchedule} options={({ navigation, route }) => ({ title: "Horario", headerTitleStyle: { color: "#fff" }, headerStyle: { backgroundColor: "#4b4b4b" }, headerLeft: () =>  <Button containerStyle={{ paddingLeft:15 }} buttonStyle={{ backgroundColor: "#00000000" }} onPress={async () => { await FileSystem.deleteAsync(FileSystem.documentDirectory + "imageProfile.jpg", { idempotent: true });

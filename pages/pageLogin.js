@@ -1,6 +1,6 @@
 //Librerias
 import React, { useState } from "react";
-import { Text, TextInput, TouchableOpacity, View, Image, ActivityIndicator, ToastAndroid, Platform, AlertIOS } from "react-native";
+import { Text, TextInput, TouchableOpacity, View, Image, ActivityIndicator, ToastAndroid, Platform, AlertIOS, StatusBar } from "react-native";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faEye, faEyeSlash, faUser, faLock, faSignInAlt } from "@fortawesome/free-solid-svg-icons";
 import * as cheerio from "react-native-cheerio";
@@ -191,7 +191,7 @@ const PageLogin = ({ navigation }) => {
     //Estructura de la pagina
     return (
         <View style={PageLoginStyles.container} >
-
+            <StatusBar backgroundColor="#222222" />
             <View style={PageLoginStyles.subContainer}>
 
 

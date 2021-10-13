@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Text, View, Image, TouchableOpacity } from "react-native";
+import { Text, View, Image, TouchableOpacity, StatusBar } from "react-native";
 import * as SecureStore from 'expo-secure-store';
 
 
@@ -16,7 +16,7 @@ const PageConfirmData = ({ route, navigation }) => {
 
     return (
         <View style={PageConfirmDataStyles.container} >
-            
+            <StatusBar backgroundColor="#222222" />
 
             <View  style={PageConfirmDataStyles.subContainerStart} />
 

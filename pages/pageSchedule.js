@@ -1,6 +1,6 @@
 //Libraries used in this page
 import React, { Component, useState, useRef } from "react";
-import { Text, View, ScrollView, Dimensions, StyleSheet, TouchableOpacity } from "react-native";
+import { Text, View, ScrollView, Dimensions, StyleSheet, TouchableOpacity, StatusBar } from "react-native";
 import TextTicker from 'react-native-text-ticker';
 import * as cheerio from "react-native-cheerio";
 import * as FileSystem from "expo-file-system";
@@ -206,9 +206,11 @@ const PageSchedule = ({ navigation }) => {
 
     return (
         <View style={PageScheduleStyles.container}>
+            <StatusBar backgroundColor="#4b4b4b" />
             <ScrollView>
-
+            
             <View style={PageScheduleStyles.headerRow}>
+                
                 <View style={PageScheduleStyles.hour}>
                     <FontAwesomeIcon icon={faClock} style={PageScheduleStyles.hourText} />
                 </View>
@@ -248,6 +250,8 @@ const PageSchedule = ({ navigation }) => {
                 );
             })}
             
+            {/* No estoy seguro, pero parece que el error esta en el size, debo recalcular la formula y revisar porque falla */}
+
             {Object.keys(schedule).map((text, index) => { 
                 return(schedule[text]["Horario"].map((text2) => {
 
